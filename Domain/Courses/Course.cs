@@ -15,6 +15,10 @@ namespace Domain.Course
         public virtual Author Author { get; set; }
         public virtual IList<Module> Modules { get; set; }
 
+        protected Course()
+        {
+        }
+
         public Course(string title, string description, DateTime publishedOn, Level level)
         {
             Title = title ?? throw new ArgumentNullException(nameof(title));

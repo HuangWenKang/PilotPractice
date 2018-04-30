@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Utils
 {
-    internal class EventListener :
+    public class EventListener :
        IPostInsertEventListener,
        IPostDeleteEventListener,
        IPostUpdateEventListener,

@@ -12,6 +12,10 @@ namespace Domain.Article
         public virtual Author Author { get; set; }
         public virtual Attach Attach { get; set; }
 
+        protected Article()
+        {
+        }
+
         public Article(string title, string description)
         {
             Title = title ?? throw new ArgumentNullException(nameof(title));

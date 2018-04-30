@@ -14,6 +14,10 @@ namespace Domain.Book
         public virtual DateTime PublishedOn { get; }
         public virtual Author Author { get; set; }
 
+        protected Book()
+        {
+        }
+
         public Book(string title, string iSBN, DateTime publishedOn)
         {
             Title = title ?? throw new ArgumentNullException(nameof(title));
