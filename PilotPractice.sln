@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistent.EntityFramework"
 		{BA0B420E-988B-4C4E-80FF-A5D62C7B5121} = {BA0B420E-988B-4C4E-80FF-A5D62C7B5121}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence.Redis", "Persistence.Redis\Persistence.Redis.csproj", "{375F7688-26B1-4190-A1F6-188D74E8FD14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{6628BB4D-1584-460A-B633-D9DA3D44EA41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6628BB4D-1584-460A-B633-D9DA3D44EA41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6628BB4D-1584-460A-B633-D9DA3D44EA41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{375F7688-26B1-4190-A1F6-188D74E8FD14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375F7688-26B1-4190-A1F6-188D74E8FD14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375F7688-26B1-4190-A1F6-188D74E8FD14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375F7688-26B1-4190-A1F6-188D74E8FD14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

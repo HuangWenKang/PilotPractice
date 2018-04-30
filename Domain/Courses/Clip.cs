@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Course
+namespace Domain.Courses
 {
     public class Clip : Entity
     {

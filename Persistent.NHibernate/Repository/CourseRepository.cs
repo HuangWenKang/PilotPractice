@@ -1,5 +1,5 @@
 ﻿using Domain.Common;
-using Domain.Course;
+using Domain.Courses;
 using Domain.Utils;
 using NHibernate;
 using NHibernate.Linq;

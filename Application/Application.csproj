@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Articles\IArticleRepository.cs" />
     <Compile Include="Common\ExpressionExtensions.cs" />
     <Compile Include="Common\QueryConstraints.cs" />
     <Compile Include="Common\SortOrder.cs" />
@@ -60,7 +61,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Articles\" />
     <Folder Include="Books\" />
   </ItemGroup>
   <ItemGroup>

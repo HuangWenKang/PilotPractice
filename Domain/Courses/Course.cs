@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Domain.Course
+namespace Domain.Courses
 {
     public class Course : AggregateRoot
     {

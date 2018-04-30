@@ -1,5 +1,5 @@
 ﻿using Application.Courses;
-using Domain.Course;
+using Domain.Courses;
 using NHibernate;
 using NHibernate.Linq;
 using Persistent.NHibernate.Repository;

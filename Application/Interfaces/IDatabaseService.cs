@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using Domain.Article;
 using Domain.Book;
-using Domain.Course;
+using Domain.Courses;
 
 namespace Application.Interfaces
 {

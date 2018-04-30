@@ -28,5 +28,15 @@ namespace Domain.Common
                 transaction.Commit();
             }
         }
+
+        public void Delete(T aggregateRoot)
+        {
+            using (ISession session = SessionFactory.OpenSession())
+            using (ITransaction transaction = session.BeginTransaction())
+            {
+                session.Delete(aggregateRoot);
+                transaction.Commit();
+            }
+        }
     }
 }

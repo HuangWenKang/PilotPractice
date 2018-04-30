@@ -1,4 +1,4 @@
-﻿using Domain.Course;
+﻿using Domain.Courses;
 using FluentNHibernate;
 using FluentNHibernate.Mapping;
 using System;
@@ -18,6 +18,7 @@ namespace Persistent.NHibernate.Map
             Map(x => x.Ordering);
 
             HasMany<Clip>(Reveal.Member<Module>("Clips"))
+                .Cascade.Delete()
                 .Cascade.SaveUpdate()
                 .Not.LazyLoad()
                 .Inverse();

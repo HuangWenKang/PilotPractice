@@ -1,4 +1,4 @@
-﻿using Domain.Course;
+﻿using Domain.Courses;
 using System;
 using System.Collections.Generic;
 using System.Linq;

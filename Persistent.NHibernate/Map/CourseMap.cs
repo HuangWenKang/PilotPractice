@@ -1,4 +1,4 @@
-﻿using Domain.Course;
+﻿using Domain.Courses;
 using FluentNHibernate;
 using FluentNHibernate.Mapping;
 using System;
@@ -26,6 +26,7 @@ namespace Persistent.NHibernate.Map
             });
 
             HasMany<Module>(Reveal.Member<Course>("Modules"))
+                .Cascade.Delete()
                 .Cascade.SaveUpdate()
                 .Not.LazyLoad()
                 .Inverse();
