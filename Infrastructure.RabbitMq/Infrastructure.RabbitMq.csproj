@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BA0B420E-988B-4C4E-80FF-A5D62C7B5121}</ProjectGuid>
+    <ProjectGuid>{CA563214-5E42-4C1B-9704-750183110534}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Application</RootNamespace>
-    <AssemblyName>Application</AssemblyName>
+    <RootNamespace>Infrastructure.RabbitMq</RootNamespace>
+    <AssemblyName>Infrastructure.RabbitMq</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -33,23 +33,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="FluentAssertions, Version=5.3.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentAssertions.5.3.0\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Diagnostics.Tracing.EventSource, Version=1.1.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.28\lib\net40\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="NSoup, Version=0.8.0.0, Culture=neutral, PublicKeyToken=6d44e53f0a65e802, processorArchitecture=MSIL">
-      <HintPath>..\packages\NSoup.0.8.0\lib\net40\NSoup.dll</HintPath>
+    <Reference Include="RabbitMQ.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\RabbitMQ.Client.5.0.1\lib\net451\RabbitMQ.Client.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
@@ -74,56 +71,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Books\Commands\CreateBook\CreateBookModel.cs" />
-    <Compile Include="Books\Commands\CreateBook\Factory\IBookFactory.cs" />
-    <Compile Include="Books\Commands\CreateBook\ICreateBookCommand.cs" />
-    <Compile Include="Books\Queries\BookParser.cs" />
-    <Compile Include="Books\Queries\BookParserTests.cs" />
-    <Compile Include="Books\Queries\GetBookList\BookModel.cs" />
-    <Compile Include="Books\Queries\GetBookList\GetBookListQuery.cs" />
-    <Compile Include="Books\Queries\GetBookList\GetBookListQueryTests.cs" />
-    <Compile Include="Books\Queries\GetBookList\IBookParser.cs" />
-    <Compile Include="Books\Queries\GetBookList\IGetBookListQuery.cs" />
-    <Compile Include="Interfaces\IArticleRepository.cs" />
-    <Compile Include="Common\ExpressionExtensions.cs" />
-    <Compile Include="Common\QueryConstraints.cs" />
-    <Compile Include="Common\SortOrder.cs" />
-    <Compile Include="Interfaces\ICourseRepository.cs" />
-    <Compile Include="Interfaces\IDatabaseService.cs" />
-    <Compile Include="Interfaces\IEntity.cs" />
-    <Compile Include="Interfaces\INotificationService.cs" />
-    <Compile Include="Interfaces\IQueryConstraints.cs" />
-    <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Interfaces\IUnitOfWork.cs" />
-    <Compile Include="Common\PagedResult.cs" />
-    <Compile Include="Messaging\INotifyMq.cs" />
+    <Compile Include="Messaging\NotifyMq.cs" />
+    <Compile Include="Messaging\NotifyMqTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Articles\Commands\" />
-    <Folder Include="Articles\Queries\" />
-    <Folder Include="Courses\Commands\" />
-    <Folder Include="Courses\Queries\" />
+    <ProjectReference Include="..\Application\Application.csproj">
+      <Project>{BA0B420E-988B-4C4E-80FF-A5D62C7B5121}</Project>
+      <Name>Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{55FC657A-9BD4-48DC-86BD-45AC6423B7D5}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{55FC657A-9BD4-48DC-86BD-45AC6423B7D5}</Project>
-      <Name>Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
-      <Project>{851034D0-7BFB-480E-995E-E71C054B3D06}</Project>
-      <Name>Infrastructure</Name>
-    </ProjectReference>
+    <Analyzer Include="..\packages\xunit.analyzers.0.7.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\xunit.analyzers.0.7.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

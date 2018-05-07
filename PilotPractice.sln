@@ -32,6 +32,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence.Redis", "Persis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.WebAPI", "Presentation.WebAPI\Presentation.WebAPI.csproj", "{BDC52044-E3AB-4AD8-ADFB-CAB3B1EEAEED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.RabbitMq", "Infrastructure.RabbitMq\Infrastructure.RabbitMq.csproj", "{CA563214-5E42-4C1B-9704-750183110534}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BA0B420E-988B-4C4E-80FF-A5D62C7B5121} = {BA0B420E-988B-4C4E-80FF-A5D62C7B5121}
+		{55FC657A-9BD4-48DC-86BD-45AC6423B7D5} = {55FC657A-9BD4-48DC-86BD-45AC6423B7D5}
+		{027EF991-248D-4B13-B619-549A7F97B7F3} = {027EF991-248D-4B13-B619-549A7F97B7F3}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +81,10 @@ Global
 		{BDC52044-E3AB-4AD8-ADFB-CAB3B1EEAEED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDC52044-E3AB-4AD8-ADFB-CAB3B1EEAEED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDC52044-E3AB-4AD8-ADFB-CAB3B1EEAEED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA563214-5E42-4C1B-9704-750183110534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA563214-5E42-4C1B-9704-750183110534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA563214-5E42-4C1B-9704-750183110534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA563214-5E42-4C1B-9704-750183110534}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
