@@ -8,5 +8,7 @@ namespace Infrastructure.NetWork
 {
     public interface IHttpClientWrapper
     {
+        string Get(string url, KeyValuePair<string, string> headers);
+        string Post(string url, KeyValuePair<string, string> headers);
     }
 }

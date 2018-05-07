@@ -20,6 +20,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{BA0B420E-988B-4C4E-80FF-A5D62C7B5121}"
 	ProjectSection(ProjectDependencies) = postProject
 		{55FC657A-9BD4-48DC-86BD-45AC6423B7D5} = {55FC657A-9BD4-48DC-86BD-45AC6423B7D5}
+		{851034D0-7BFB-480E-995E-E71C054B3D06} = {851034D0-7BFB-480E-995E-E71C054B3D06}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistent.EntityFramework", "Persistent.EntityFramework\Persistent.EntityFramework.csproj", "{6628BB4D-1584-460A-B633-D9DA3D44EA41}"
@@ -28,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistent.EntityFramework"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence.Redis", "Persistence.Redis\Persistence.Redis.csproj", "{375F7688-26B1-4190-A1F6-188D74E8FD14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.WebAPI", "Presentation.WebAPI\Presentation.WebAPI.csproj", "{BDC52044-E3AB-4AD8-ADFB-CAB3B1EEAEED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +70,10 @@ Global
 		{375F7688-26B1-4190-A1F6-188D74E8FD14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{375F7688-26B1-4190-A1F6-188D74E8FD14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{375F7688-26B1-4190-A1F6-188D74E8FD14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDC52044-E3AB-4AD8-ADFB-CAB3B1EEAEED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDC52044-E3AB-4AD8-ADFB-CAB3B1EEAEED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDC52044-E3AB-4AD8-ADFB-CAB3B1EEAEED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDC52044-E3AB-4AD8-ADFB-CAB3B1EEAEED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
